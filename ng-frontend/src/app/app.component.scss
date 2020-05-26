@@ -4,3 +4,7 @@ header {
   grid-template-columns: 1fr auto auto;
   gap: 0 10px;
 }
+
+nb-layout-column {
+  min-height: 100vh;
+}
