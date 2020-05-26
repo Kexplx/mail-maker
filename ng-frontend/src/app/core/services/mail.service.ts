@@ -6,6 +6,10 @@ import { throwError, Observable } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { Result } from './models/result.model';
 
+const urls = {
+  development: 'http://localhost:3000',
+  production: 'http://localhost:3000',
+};
 
 const compileTimeSwitchedUrl = environment.production ? urls.production : urls.development;
 
