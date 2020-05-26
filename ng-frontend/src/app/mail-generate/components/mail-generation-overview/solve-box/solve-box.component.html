@@ -1,3 +1,24 @@
-<p>
-  solve-box works!
-</p>
+<nb-card>
+  <nb-card-header>
+    <h5>Solve</h5>
+    <p class="subtitle-2">
+      Solve the captcha below.
+    </p>
+    <nb-icon status="primary" class="nb-card-header-icon" icon="eye-outline"></nb-icon>
+  </nb-card-header>
+  <nb-card-body>
+    <img class="img-captcha" src="assets/images/captcha.jfif" alt="The captcha" />
+    <form class="form-generate">
+      <div class="form-item">
+        <label class="label">Answer</label>
+        <input type="text" nbInput fullWidth />
+        <div *ngIf="false">
+          <label class="label text-danger">Auditnamen eintragen</label>
+        </div>
+      </div>
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <button status="primary" hero fullWidth nbButton>Solve Captcha</button>
+  </nb-card-footer>
+</nb-card>

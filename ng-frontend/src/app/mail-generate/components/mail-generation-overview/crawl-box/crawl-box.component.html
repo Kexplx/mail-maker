@@ -1,3 +1,24 @@
-<p>
-  crawl-box works!
-</p>
+<nb-card>
+  <nb-card-header>
+    <h5>Crawl</h5>
+    <p class="subtitle-2">
+      Crawl the registration form.
+    </p>
+    <nb-icon status="primary" class="nb-card-header-icon" icon="code-download-outline"></nb-icon>
+  </nb-card-header>
+  <nb-card-body>
+    <form class="form-generate">
+      <div class="form-item">
+        <label class="label">Provider</label>
+        <nb-select selected="0" fullWidth>
+          <nb-option value="0">WEB.DE</nb-option>
+          <nb-option disabled value="1">GMX (coming soon)</nb-option>
+          <nb-option disabled value="2">Yahoo (coming soon)</nb-option>
+        </nb-select>
+      </div>
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <button status="primary" hero fullWidth nbButton>Crawl</button>
+  </nb-card-footer>
+</nb-card>
