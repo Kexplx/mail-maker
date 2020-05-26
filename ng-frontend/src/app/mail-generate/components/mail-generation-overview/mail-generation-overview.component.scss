@@ -1,14 +1,5 @@
 @import 'src/sass/utils';
 
-.form-generate {
-  display: grid;
-  grid-template-columns: 1fr;
-}
-
-.form-item {
-  display: grid;
-}
-
 .container {
   padding: 0px;
   display: grid;
@@ -16,9 +7,9 @@
   gap: 10px;
 
   margin-bottom: 10px;
-  @media screen and(max-width: 850px) {
+  @media screen and(max-width: 900px) {
     grid-template-columns: 1fr 1fr;
-    & nb-card:last-child {
+    & app-result-box {
       grid-column: 1/-1;
     }
   }
@@ -26,29 +17,4 @@
   @media screen and(max-width:600px) {
     grid-template-columns: 1fr;
   }
-}
-
-.img-captcha {
-  display: block;
-  margin: auto;
-  margin-bottom: 10px;
-  border-radius: 3px;
-}
-
-.container-credential:not(:last-child) {
-  margin-bottom: 20px;
-}
-
-a {
-  text-decoration: none;
-}
-
-nb-card-header {
-  position: relative;
-}
-
-.nb-card-header-icon {
-  position: absolute;
-  top: 20px;
-  right: 20px;
 }
