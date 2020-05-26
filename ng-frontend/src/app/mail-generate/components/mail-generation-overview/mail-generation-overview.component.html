@@ -1,0 +1,71 @@
+<nb-layout>
+  <nb-layout-column style="padding: 0px; margin-top: 20px;">
+    <div class="container">
+      <nb-card>
+        <nb-card-header>
+          <h5>Crawl</h5>
+          <p class="subtitle-2">
+            Crawl the registration form.
+          </p>
+          <nb-icon status="primary" class="nb-card-header-icon" icon="code-download-outline"></nb-icon>
+        </nb-card-header>
+        <nb-card-body>
+          <form class="form-generate">
+            <div class="form-item">
+              <label class="label">Provider</label>
+              <nb-select selected="0" fullWidth>
+                <nb-option value="0">WEB.DE</nb-option>
+                <nb-option disabled value="1">GMX (coming soon)</nb-option>
+                <nb-option disabled value="2">Yahoo (coming soon)</nb-option>
+              </nb-select>
+            </div>
+          </form>
+        </nb-card-body>
+        <nb-card-footer>
+          <button status="primary" hero fullWidth nbButton>Crawl</button>
+        </nb-card-footer>
+      </nb-card>
+      <nb-card>
+        <nb-card-header>
+          <h5>Solve</h5>
+          <p class="subtitle-2">
+            Solve the captcha below.
+          </p>
+          <nb-icon status="primary" class="nb-card-header-icon" icon="eye-outline"></nb-icon>
+        </nb-card-header>
+        <nb-card-body>
+          <img class="img-captcha" src="assets/images/captcha.jfif" alt="The captcha" />
+          <form class="form-generate">
+            <div class="form-item">
+              <label class="label">Answer</label>
+              <input type="text" nbInput fullWidth />
+              <div *ngIf="false">
+                <label class="label text-danger">Auditnamen eintragen</label>
+              </div>
+            </div>
+          </form>
+        </nb-card-body>
+        <nb-card-footer>
+          <button status="primary" hero fullWidth nbButton>Solve Captcha</button>
+        </nb-card-footer>
+      </nb-card>
+      <nb-card style="width: 100%;">
+        <nb-card-header>
+          <h5>Success</h5>
+          <p class="subtitle-2">Your account has been created at <a href="#">web.de</a>.</p>
+          <nb-icon status="primary" class="nb-card-header-icon" icon="checkmark-circle-2-outline"></nb-icon>
+        </nb-card-header>
+        <nb-card-body>
+          <div class="container-credential">
+            <label class="label">Username</label>
+            <p class="subtitle">asdodasjsad@web.de</p>
+          </div>
+          <div class="container-credential">
+            <label class="label">Password</label>
+            <p class="subtitle">fds9k12ksdf90dsuafdfsd1</p>
+          </div>
+        </nb-card-body>
+      </nb-card>
+    </div>
+  </nb-layout-column>
+</nb-layout>
