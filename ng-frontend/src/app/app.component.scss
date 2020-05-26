@@ -1,0 +1,6 @@
+@import 'src/sass/utils';
+header {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0 10px;
+}
