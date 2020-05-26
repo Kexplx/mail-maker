@@ -1,10 +1,16 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-import { CoreRoutingModule } from './core-routing.module';
+import { NgModule, Optional, SkipSelf } from '@angular/core';
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, CoreRoutingModule],
+  imports: [],
 })
-export class CoreModule {}
+export class CoreModule {
+  /**
+   * Throws an error if a second instance of CoreModule is created
+   */
+  constructor(@Optional() @SkipSelf() coreModule: CoreModule) {
+    if (coreModule) {
+      throw new Error('CoreModule is already loaded. Import it in the AppModule only');
+    }
+  }
+}
