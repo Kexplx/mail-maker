@@ -1,0 +1,17 @@
+@import 'themes';
+@import 'reset';
+@import 'utils';
+@import '~@nebular/theme/styles/globals';
+
+@include nb-install() {
+  @include nb-theme-global();
+}
+nb-layout:nth-child(1) > div:nth-child(1) > div:nth-child(1) {
+  min-height: 0;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid rgb(220, 220, 220);
+  margin: 10px 30px 10px 30px;
+}
