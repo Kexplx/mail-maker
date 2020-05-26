@@ -1,6 +1,7 @@
 @mixin card-default {
   nb-card {
     height: 100%;
+    margin: 0;
   }
 
   nb-card-header {
