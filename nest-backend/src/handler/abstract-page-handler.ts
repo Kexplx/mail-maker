@@ -10,4 +10,7 @@ export abstract class AbstractPageHandler {
     this.page = page;
     this.rsg = new RandomStringGenerator();
   }
+
+  abstract async getCaptchaLink(): Promise<string>;
+  abstract async fill(captcha: string): Promise<Result>;
 }
