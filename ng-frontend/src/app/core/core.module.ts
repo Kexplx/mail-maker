@@ -1,8 +1,19 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { NgxsModule } from '@ngxs/store';
+import { AppState } from './ngxs/app.state';
+import { environment } from 'src/environments/environment';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 
 @NgModule({
   declarations: [],
-  imports: [],
+  imports: [
+    NgxsModule.forRoot([AppState], {
+      developmentMode: !environment.production,
+    }),
+    NgxsLoggerPluginModule,
+    NgxsReduxDevtoolsPluginModule,
+  ],
 })
 export class CoreModule {
   /**
