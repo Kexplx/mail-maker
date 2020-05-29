@@ -31,6 +31,31 @@ export interface AppStateModel {
 export class AppState {
   constructor(private mailService: MailService) {}
 
+  @Selector()
+  static crawlLoading({ crawlLoading }: AppStateModel) {
+    return crawlLoading;
+  }
+
+  @Selector()
+  static crawlFailed({ crawlFailed }: AppStateModel) {
+    return crawlFailed;
+  }
+  @Selector()
+  static answerLoading({ answerLoading }: AppStateModel) {
+    return answerLoading;
+  }
+  @Selector()
+  static answerFailed({ answerFailed }: AppStateModel) {
+    return answerFailed;
+  }
+  @Selector()
+  static task({ task }: AppStateModel) {
+    return task;
+  }
+  @Selector()
+  static result({ result }: AppStateModel) {
+    return result;
+  }
   @Action(Crawl)
   crawl(ctx: StateContext<AppStateModel>, action: Crawl) {
     this.mailService.crawl().subscribe((task: CaptchaTask) => {
