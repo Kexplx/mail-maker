@@ -1,23 +1,19 @@
-/* tslint:disable:no-unused-variable */
-
 import { MailService } from './mail.service';
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { of, Observable } from 'rxjs';
-import { CaptchaTask } from './models/captcha-task.model';
-import { Result } from './models/result.model';
 import { HttpClient } from '@angular/common/http';
 
 fdescribe('Service: Mail', () => {
   let service: MailService;
 
   let httpClientSpy: any;
-  let getStubValue: Observable<CaptchaTask>;
-  let postStubValue: Observable<Result>;
+  let getStubValue: Observable<any>;
+  let postStubValue: Observable<any>;
   beforeEach(() => {
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get', 'post']);
 
-    getStubValue = of<CaptchaTask>({ captchaUrl: 'test', id: '123' });
-    postStubValue = of<Result>({
+    getStubValue = of({ captchaUrl: 'test', id: '123' });
+    postStubValue = of({
       createdTimestamp: 123,
       password: 'password',
       username: 'username',
@@ -44,7 +40,7 @@ fdescribe('Service: Mail', () => {
   });
 
   it('should call http.post() once during crawl()', () => {
-    service.answer('123');
+    service.answer({ captcha: 'ads', sessionId: 'asd' });
 
     expect(httpClientSpy.post.calls.count()).toBe(1, 'post was called once');
   });
