@@ -1,29 +1,28 @@
-import { State, Selector, Action, StateContext, createSelector } from '@ngxs/store';
+import { State, Action, StateContext, Selector } from '@ngxs/store';
 import { Injectable } from '@angular/core';
-import { Crawl } from './app.actions';
-import { CaptchaTask } from '../services/models/captcha-task.model';
-import { Result } from '../services/models/result.model';
 import { MailService } from '../services/mail.service';
+import { Crawl, ProvideAnswer } from './app.actions';
+import { Answer } from '../models/answer.model';
+import { Task } from '../models/task.model';
+import { Result } from '../models/result.model';
 
 export interface AppStateModel {
-  crawlDispatched: boolean;
-  answerDispatched: boolean;
-
+  crawlLoading: boolean;
   crawlFailed: boolean;
+  answerLoading: boolean;
   answerFailed: boolean;
-
-  captchaTask: CaptchaTask;
+  task: Task;
   result: Result;
 }
 
 @State<AppStateModel>({
   name: 'app',
   defaults: {
-    answerDispatched: false,
-    crawlDispatched: false,
+    crawlLoading: false,
     crawlFailed: false,
+    answerLoading: false,
     answerFailed: false,
-    captchaTask: null,
+    task: null,
     result: null,
   },
 })
@@ -56,10 +55,28 @@ export class AppState {
   static result({ result }: AppStateModel) {
     return result;
   }
+
   @Action(Crawl)
-  crawl(ctx: StateContext<AppStateModel>, action: Crawl) {
-    this.mailService.crawl().subscribe((task: CaptchaTask) => {
-      ctx.patchState({ captchaTask: task });
-    });
+  crawl(ctx: StateContext<AppStateModel>) {
+    ctx.patchState({ crawlLoading: true });
+
+    this.mailService.crawl().subscribe(
+      task => ctx.patchState({ task, crawlFailed: false }),
+      () => ctx.patchState({ crawlFailed: true }),
+      () => ctx.patchState({ answerLoading: false }),
+    );
+  }
+
+  @Action(ProvideAnswer)
+  answer(ctx: StateContext<AppStateModel>, answer: Answer) {
+    ctx.patchState({ answerLoading: true });
+
+    this.mailService.answer(answer).subscribe(
+      result => {
+        ctx.patchState({ result, answerFailed: false });
+      },
+      () => ctx.patchState({ answerFailed: true }),
+      () => ctx.patchState({ answerLoading: false }),
+    );
   }
 }
