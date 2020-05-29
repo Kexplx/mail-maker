@@ -8,5 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class MailGenerationOverviewComponent implements OnInit {
   constructor() {}
 
-  ngOnInit() {}
+  ngAfterViewInit() {
+    const layout = document.querySelector('app-mail-generation-overview .layout') as HTMLDivElement;
+    layout.style.minHeight = '0';
+  }
 }
