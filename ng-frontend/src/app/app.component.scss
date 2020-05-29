@@ -28,7 +28,7 @@ header {
 
 nav {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: 1fr 1fr auto;
   align-items: center;
   gap: 0 5px;
 }
