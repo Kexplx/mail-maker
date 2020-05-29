@@ -18,3 +18,7 @@
     grid-template-columns: 1fr;
   }
 }
+app-mail-generation-overview .layout {
+  min-height: 0;
+  background-color: red;
+}
