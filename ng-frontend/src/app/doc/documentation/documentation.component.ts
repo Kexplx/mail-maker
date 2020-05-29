@@ -10,6 +10,6 @@ export class DocumentationComponent implements OnInit {
   constructor(private titleService: Title) {}
 
   ngOnInit(): void {
-    this.titleService.setTitle('MailMaker / Docs');
+    this.titleService.setTitle('MailMaker - Docs');
   }
 }

@@ -6,12 +6,11 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'generate',
+    redirectTo: 'make',
   },
   {
-    path: 'generate',
-    loadChildren: () =>
-      import('./mail-generate/mail-generation.module').then(m => m.MailGenerationModule),
+    path: 'make',
+    loadChildren: () => import('./make/make.module').then(m => m.MakeModule),
   },
   {
     path: 'doc',
