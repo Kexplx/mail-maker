@@ -11,6 +11,8 @@ const routes: Routes = [
   {
     path: 'generate',
     loadChildren: () =>
+      import('./mail-generate/mail-generation.module').then(m => m.MailGenerationModule),
+  },
   {
     path: 'doc',
     loadChildren: () => import('./doc/doc.module').then(m => m.DocModule),

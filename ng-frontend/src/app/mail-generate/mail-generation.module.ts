@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MailGenerateRoutingModule } from './mail-generate-routing.module';
+import { MailGenerateRoutingModule } from './mail-generation-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { CrawlBoxComponent } from './components/mail-generation-overview/crawl-box/crawl-box.component';
@@ -18,4 +18,4 @@ import { MailGenerationOverviewComponent } from './components/mail-generation-ov
   ],
   imports: [CommonModule, FormsModule, MailGenerateRoutingModule, SharedModule],
 })
-export class MailGenerateModule {}
+export class MailGenerationModule {}
