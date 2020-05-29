@@ -2,18 +2,20 @@
   <nb-layout-column style="padding-top: 100px;">
     <div class="container">
       <header class="text-capitalize">
-        <h4>Email Generation Tool</h4>
-        <a [routerLink]="['generate']" hero status="primary" nbButton>
-          <nb-icon icon="code-outline"></nb-icon>
-          Generate
-        </a>
-        <a [routerLink]="['doc']" nbButton>
-          <nb-icon icon="code-outline"></nb-icon>
-          doc
-        </a>
-        <a href="https://google.de" nbButton>
-          <nb-icon icon="github"></nb-icon>
-        </a>
+        <h1 class="text-primary">Mail Maker</h1>
+        <nav>
+          <a [routerLink]="['generate']" hero status="primary" nbButton>
+            <nb-icon icon="email-outline"></nb-icon>
+            Generate
+          </a>
+          <a [routerLink]="['doc']" nbButton>
+            <nb-icon icon="code-outline"></nb-icon>
+            doc
+          </a>
+          <a href="https://google.de" nbButton>
+            <nb-icon icon="github"></nb-icon>
+          </a>
+        </nav>
         <p class="subtitle">Obtain a fresh E-Mail account from various providers.</p>
       </header>
       <hr />
