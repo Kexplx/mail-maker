@@ -8,5 +8,5 @@ export class Crawl {
 
 export class ProvideAnswer {
   static readonly type = '[MakeComponent] Answer the captcha';
-  constructor(public answer: Answer) {}
+  constructor(public captcha: string) {}
 }
