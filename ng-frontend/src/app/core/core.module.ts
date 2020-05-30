@@ -6,14 +6,14 @@ import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 
 @NgModule({
-  declarations: [],
   imports: [
     NgxsModule.forRoot([AppState], {
       developmentMode: !environment.production,
     }),
-    NgxsLoggerPluginModule,
-    NgxsReduxDevtoolsPluginModule,
+    NgxsLoggerPluginModule.forRoot(),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
   ],
+  exports: [NgxsModule],
 })
 export class CoreModule {
   /**
