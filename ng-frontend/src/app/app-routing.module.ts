@@ -13,8 +13,8 @@ const routes: Routes = [
     loadChildren: () => import('./make/make.module').then(m => m.MakeModule),
   },
   {
-    path: 'doc',
-    loadChildren: () => import('./doc/doc.module').then(m => m.DocModule),
+    path: 'docs',
+    loadChildren: () => import('./docs/docs.module').then(m => m.DocsModule),
   },
 ];
 

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DocumentationComponent } from './documentation/documentation.component';
+import { DocumentationComponent } from './components/documentation/documentation.component';
 
 const routes: Routes = [
   {
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class DocRoutingModule {}
+export class DocsRoutingModule {}
