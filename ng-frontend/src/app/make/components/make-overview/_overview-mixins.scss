@@ -1,3 +1,4 @@
+@import 'src/sass/colors';
 @mixin card-default {
   nb-card {
     height: 100%;
@@ -11,6 +12,20 @@
       position: absolute;
       top: 20px;
       right: 20px;
+    }
+  }
+}
+
+@mixin step-placeholder {
+  .card-step-placeholder {
+    background-color: $background-disabled;
+
+    & .wrapper-step-placeholder {
+      align-items: center;
+      display: grid;
+      justify-items: center;
+      height: 100%;
+      width: 100%;
     }
   }
 }
