@@ -1,6 +1,6 @@
 import { Page } from 'puppeteer';
-import { Result } from 'src/models/result.model';
-import { RandomStringGenerator } from 'src/helpers/random-string-generator';
+import { Result } from '../models/result.model';
+import { RandomStringGenerator } from '../helpers/random-string-generator';
 
 export abstract class AbstractPageHandler {
   protected readonly page: Page;
