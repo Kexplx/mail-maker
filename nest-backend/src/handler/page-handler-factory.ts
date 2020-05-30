@@ -1,5 +1,5 @@
 import { AbstractPageHandler } from './abstract-page-handler';
-import { Provider } from 'src/models/enums/provider.enum';
+import { Provider } from '../models/enums/provider.enum';
 import { WebdePageHandler } from './webde-page-handler';
 import { Page } from 'puppeteer';
 
