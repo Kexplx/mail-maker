@@ -31,6 +31,7 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
   imports: [
     NbThemeModule,
     NbLayoutModule,
+    NbSpinnerModule,
     NbButtonModule,
     NbSelectModule,
     NbRadioModule,
@@ -41,7 +42,6 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     NbCardModule,
     NbEvaIconsModule,
     NbIconModule,
-    NbSpinnerModule,
     NbStepperModule,
     NbInputModule,
     NbRouteTabsetModule,
@@ -59,6 +59,7 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     NbLayoutModule,
     NbButtonModule,
     NbRouteTabsetModule,
+    NbSpinnerModule,
     NbSelectModule,
     NbToastrModule,
     NbLayoutModule,
