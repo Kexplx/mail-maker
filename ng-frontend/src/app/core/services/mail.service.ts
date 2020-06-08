@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { throwError, Observable } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { Task } from '../models/task.model';
 import { Answer } from '../models/answer.model';
 import { Result } from '../models/result.model';
+import { Provider } from '../models/enums/provider.enum';
 
 const urls = {
   development: 'http://localhost:3000',
-  production: 'http://localhost:3000',
+  production: 'https://mail-maker-api.herokuapp.com',
 };
 
 const compileTimeSwitchedUrl = environment.production ? urls.production : urls.development;
@@ -34,9 +35,8 @@ export class MailService {
   answer(answer: Answer): Observable<Result> {
     const url = `${compileTimeSwitchedUrl}/answer`;
 
-    return this.http.post<Result>(url, answer).pipe(
-      tap(data => console.log(`Received data from /answer endpoint after POST: ${data}`)),
-      catchError(err => throwError(`Error at /answer endpoint after POST: ${err}`)),
-    );
+    return this.http
+      .post<Result>(url, answer)
+      .pipe(catchError(err => throwError(`Error at /answer endpoint after POST: ${err}`)));
   }
 }
