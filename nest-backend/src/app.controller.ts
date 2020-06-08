@@ -35,7 +35,7 @@ export class AppController {
       if (result) {
         return result;
       } else {
-        throw new HttpException('Invalid captcha provided', HttpStatus.BAD_REQUEST);
+        throw new HttpException('Invalid captcha', HttpStatus.BAD_REQUEST);
       }
     } else {
       throw new HttpException('Invalid captcha or sessionId', HttpStatus.BAD_REQUEST);
