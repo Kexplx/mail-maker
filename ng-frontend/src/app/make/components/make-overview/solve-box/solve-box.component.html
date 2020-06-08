@@ -1,4 +1,4 @@
-<nb-card *ngIf="false; else template" nbSpinnerSize="giant" nbSpinnerStatus="primary" [nbSpinner]="answerLoading$ | async">
+<nb-card *ngIf="task$ | async; else template" nbSpinnerSize="giant" nbSpinnerStatus="primary" [nbSpinner]="answerLoading$ | async">
   <nb-card-header>
     <h6>Solve</h6>
     <p class="subtitle-2">
@@ -7,7 +7,7 @@
     <nb-icon class="nb-card-header-icon" icon="checkmark-circle-2-outline"></nb-icon>
   </nb-card-header>
   <nb-card-body>
-    <img class="img-captcha" src="assets/images/captcha.jfif" alt="The captcha" />
+    <img class="img-captcha" [src]="captchaLink" alt="The captcha" />
     <label class="label">Answer</label>
     <input [status]="captcha.invalid && captcha.touched ? 'danger' : ''" [formControl]="captcha" type="text" nbInput fullWidth />
     <div *ngIf="captcha.invalid && captcha.touched">
