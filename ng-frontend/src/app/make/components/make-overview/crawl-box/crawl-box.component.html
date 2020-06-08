@@ -10,10 +10,10 @@
     <form class="form-generate">
       <div class="form-item">
         <label class="label">Provider</label>
-        <nb-select selected="0" fullWidth>
-          <nb-option value="0">WEB.DE</nb-option>
-          <nb-option disabled value="1">GMX (coming soon)</nb-option>
-          <nb-option disabled value="2">Yahoo (coming soon)</nb-option>
+    <nb-select [(selected)]="selectedProvider" fullWidth>
+      <nb-option value="webde">WEB.DE</nb-option>
+      <nb-option disabled value="gmx">GMX (coming soon)</nb-option>
+      <nb-option disabled value="yahoo">Yahoo (coming soon)</nb-option>
         </nb-select>
       </div>
     </form>
