@@ -14,4 +14,8 @@ a {
     right: -10px;
     top: 10px;
   }
+
+  &:last-child {
+    margin-top: 20px;
+  }
 }
