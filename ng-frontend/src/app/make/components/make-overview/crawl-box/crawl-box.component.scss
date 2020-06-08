@@ -1,0 +1,8 @@
+@import '../overview-mixins';
+@include card-default();
+
+.nb-card-header-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

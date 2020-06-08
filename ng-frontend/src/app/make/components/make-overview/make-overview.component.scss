@@ -1,0 +1,25 @@
+@import 'src/sass/utils';
+@import 'src/sass/sizes';
+
+.container {
+  padding: 0px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+
+  margin-bottom: 10px;
+  @media screen and(max-width: $laptop-breakpoint) {
+    grid-template-columns: 1fr 1fr;
+    & app-result-box {
+      grid-column: 1/-1;
+    }
+  }
+
+  @media screen and(max-width:600px) {
+    grid-template-columns: 1fr;
+  }
+}
+app-mail-generation-overview .layout {
+  min-height: 0;
+  background-color: red;
+}

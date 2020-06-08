@@ -1,0 +1,14 @@
+@import '../overview-mixins';
+@include card-default();
+@include step-placeholder();
+
+nb-card {
+  padding: 0;
+}
+
+.img-captcha {
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}

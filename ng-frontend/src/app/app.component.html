@@ -1,0 +1,25 @@
+<nb-layout>
+  <nb-layout-column style="padding-top: 100px;">
+    <div class="container">
+      <header class="text-capitalize">
+        <h1>Mail Maker</h1>
+        <nav>
+          <a routerLink="make" hero status="primary" nbButton>
+            <nb-icon icon="email-outline"></nb-icon>
+            make
+          </a>
+          <a routerLink="docs" nbButton>
+            <nb-icon icon="code-outline"></nb-icon>
+            docs
+          </a>
+          <a href="https://github.com/Kexplx/mail-maker" target="_blank" nbButton>
+            <nb-icon icon="github"></nb-icon>
+          </a>
+        </nav>
+        <p class="subtitle">Obtain a fresh E-Mail account from various providers.</p>
+      </header>
+      <hr />
+      <router-outlet></router-outlet>
+    </div>
+  </nb-layout-column>
+</nb-layout>

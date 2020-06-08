@@ -1,0 +1,19 @@
+@import 'themes';
+@import 'reset';
+@import 'utils';
+@import '~@nebular/theme/styles/globals';
+@import 'colors';
+
+@include nb-install() {
+  @include nb-theme-global();
+}
+
+hr {
+  border: none;
+  border-bottom: 1px dashed $color-primary;
+  margin: 15px 0 15px 0;
+}
+
+a {
+  text-decoration: none;
+}

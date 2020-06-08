@@ -1,0 +1,21 @@
+@import '../overview-mixins';
+@include card-default();
+@include step-placeholder();
+
+a {
+  text-decoration: none;
+}
+
+.container-credential {
+  position: relative;
+
+  button {
+    position: absolute;
+    right: -10px;
+    top: 10px;
+  }
+
+  &:last-child {
+    margin-top: 20px;
+  }
+}

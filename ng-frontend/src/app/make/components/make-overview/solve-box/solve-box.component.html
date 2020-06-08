@@ -1,0 +1,32 @@
+<nb-card *ngIf="task$ | async; else template" nbSpinnerSize="giant" nbSpinnerStatus="primary" [nbSpinner]="answerLoading$ | async">
+  <nb-card-header>
+    <h6>Solve</h6>
+    <p class="subtitle-2">
+      Solve the captcha below.
+    </p>
+    <nb-icon class="nb-card-header-icon" icon="checkmark-circle-2-outline"></nb-icon>
+  </nb-card-header>
+  <nb-card-body>
+    <img class="img-captcha" [src]="captchaLink" alt="The captcha" />
+    <label class="label">Answer</label>
+    <input [status]="captcha.invalid && captcha.touched ? 'danger' : ''" [formControl]="captcha" type="text" nbInput fullWidth />
+    <div *ngIf="captcha.invalid && captcha.touched">
+      <label *ngIf="captcha.errors.required" class="label text-danger">Provide an answer</label>
+      <label *ngIf="captcha.errors.invalidCaptcha && !captcha.errors.required" class="label text-danger"> Captchas need to be in this format: {{ '^[0-9a-zA-Z]{4,6}$' }}</label>
+    </div>
+  </nb-card-body>
+  <nb-card-footer>
+    <button (click)="onSubmit()" [disabled]="captcha.invalid" status="basic" hero fullWidth nbButton>Submit Answer</button>
+  </nb-card-footer>
+</nb-card>
+<ng-template #template>
+  <nb-card class="card-step-placeholder">
+    <nb-card-body>
+      <div class="wrapper-step-placeholder">
+        <p class="label">
+          Step 2
+        </p>
+      </div>
+    </nb-card-body>
+  </nb-card>
+</ng-template>

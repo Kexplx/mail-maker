@@ -1,0 +1,36 @@
+@import 'src/sass/utils';
+@import 'src/sass/sizes';
+
+h1 {
+  margin: 0;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 10px;
+
+  @media screen and (max-width: $tablet-breakpoint) {
+    grid-template-columns: 1fr;
+    gap: 10px 0;
+
+    nav {
+      grid-row: 1;
+    }
+
+    h4 {
+      grid-row: 2;
+    }
+
+    p {
+      grid-row: 3;
+    }
+  }
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  align-items: center;
+  gap: 0 5px;
+}
