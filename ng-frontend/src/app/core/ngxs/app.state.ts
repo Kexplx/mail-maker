@@ -63,7 +63,7 @@ export class AppState {
     this.mailService.crawl().subscribe(
       task => ctx.patchState({ task, crawlFailed: false }),
       () => ctx.patchState({ crawlFailed: true }),
-      () => ctx.patchState({ answerLoading: false }),
+      () => ctx.patchState({ crawlLoading: false, crawlFailed: false }),
     );
   }
 
