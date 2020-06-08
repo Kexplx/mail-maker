@@ -57,10 +57,10 @@ export class AppState {
   }
 
   @Action(Crawl)
-  crawl(ctx: StateContext<AppStateModel>) {
+  crawl(ctx: StateContext<AppStateModel>, { provider }: Crawl) {
     ctx.patchState({ crawlLoading: true });
 
-    this.mailService.crawl().subscribe(
+    this.mailService.crawl(provider).subscribe(
       task => ctx.patchState({ task, crawlFailed: false }),
       () => ctx.patchState({ crawlFailed: true }),
       () => ctx.patchState({ crawlLoading: false, crawlFailed: false }),
