@@ -68,13 +68,12 @@ export class AppState {
   }
 
   @Action(ProvideAnswer)
-  answer(ctx: StateContext<AppStateModel>, answer: Answer) {
+  answer(ctx: StateContext<AppStateModel>, { captcha }: Answer) {
+    const sessionId = ctx.getState().task.sessionId;
     ctx.patchState({ answerLoading: true });
 
-    this.mailService.answer(answer).subscribe(
-      result => {
-        ctx.patchState({ result, answerFailed: false });
-      },
+    this.mailService.answer({ captcha, sessionId }).subscribe(
+      result => ctx.patchState({ result, answerFailed: false }),
       () => ctx.patchState({ answerFailed: true }),
       () => ctx.patchState({ answerLoading: false }),
     );
