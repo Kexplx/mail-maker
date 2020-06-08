@@ -20,13 +20,15 @@ const compileTimeSwitchedUrl = environment.production ? urls.production : urls.d
 export class MailService {
   constructor(private http: HttpClient) {}
 
-  crawl(): Observable<Task> {
+  crawl(provider: Provider): Observable<Task> {
     const url = `${compileTimeSwitchedUrl}/crawl`;
 
-    return this.http.get<Task>(url).pipe(
-      tap(data => console.log(`Received data from /crawl endpoint after GET: ${data}`)),
-      catchError(err => throwError(`Error at /crawl endpoint after GET: ${err}`)),
-    );
+    let params = new HttpParams();
+    params = params.append('provider', provider);
+
+    return this.http
+      .get<Task>(url, { params })
+      .pipe(catchError(err => throwError(`Error at /crawl endpoint after GET: ${err}`)));
   }
 
   answer(answer: Answer): Observable<Result> {
