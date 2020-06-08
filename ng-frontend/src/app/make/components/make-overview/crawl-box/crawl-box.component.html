@@ -2,23 +2,19 @@
   <nb-card-header>
     <h6>Crawl</h6>
     <p class="subtitle-2">
-      We crawl the registration form.
+      Select an email provider.
     </p>
-    <nb-icon status="primary" class="nb-card-header-icon" icon="code-download-outline"></nb-icon>
+    <nb-icon class="nb-card-header-icon" icon="checkmark-circle-2-outline"></nb-icon>
   </nb-card-header>
   <nb-card-body>
-    <form class="form-generate">
-      <div class="form-item">
-        <label class="label">Provider</label>
+    <label class="label">Provider</label>
     <nb-select [(selected)]="selectedProvider" fullWidth>
       <nb-option value="webde">WEB.DE</nb-option>
       <nb-option disabled value="gmx">GMX (coming soon)</nb-option>
       <nb-option disabled value="yahoo">Yahoo (coming soon)</nb-option>
-        </nb-select>
-      </div>
-    </form>
+    </nb-select>
   </nb-card-body>
   <nb-card-footer>
-    <button fullWidth nbButton>Crawl</button>
+    <button [disabled]="!selectedProvider" hero (click)="onSubmit()" fullWidth nbButton>Crawl</button>
   </nb-card-footer>
 </nb-card>
