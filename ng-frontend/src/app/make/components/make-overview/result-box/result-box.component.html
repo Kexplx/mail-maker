@@ -1,4 +1,4 @@
-<nb-card *ngIf="false; else template">
+<nb-card *ngIf="result$ | async as result; else template">
   <nb-card-header>
     <h6>Success</h6>
     <p class="subtitle-2">Your account has been created at <a href="#">web.de</a>.</p>
@@ -7,14 +7,14 @@
   <nb-card-body>
     <div class="container-credential">
       <label class="label">Username</label>
-      <p class="subtitle" #username>asdodasjsad@web.de</p>
+      <p class="subtitle" #username>{{ result.username }}</p>
       <button (click)="copyToClipboard(username.textContent); showToast('Username')" nbButton ghost>
         <nb-icon icon="clipboard-outline"></nb-icon>
       </button>
     </div>
     <div class="container-credential">
       <label class="label">Password</label>
-      <p class="subtitle" #password>fds9k12ksdf90dsuafdfsd1</p>
+      <p class="subtitle" #password>{{ result.password }}</p>
       <button (click)="copyToClipboard(password.textContent); showToast('Password')" nbButton ghost>
         <nb-icon icon="clipboard-outline"></nb-icon>
       </button>
