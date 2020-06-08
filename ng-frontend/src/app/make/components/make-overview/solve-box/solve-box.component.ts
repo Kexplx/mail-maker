@@ -6,7 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./solve-box.component.scss'],
 })
 export class SolveBoxComponent implements OnInit {
-  constructor() {}
+  captchaValidator({ value }: AbstractControl) {
+    const captchaRegex = /^[0-9a-zA-Z]{4,6}$/;
+
+    if (!captchaRegex.test(value)) {
+      return { invalidCaptcha: true };
+    }
+
+    return null;
+  }
 
   ngOnInit() {}
 }
