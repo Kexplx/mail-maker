@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { NbToastrService } from '@nebular/theme';
+import { Select } from '@ngxs/store';
+import { AppState } from 'src/app/core/ngxs/app.state';
+import { Observable } from 'rxjs';
+import { Result } from 'src/app/core/models/result.model';
 
 @Component({
   selector: 'app-result-box',
@@ -7,6 +11,8 @@ import { NbToastrService } from '@nebular/theme';
   styleUrls: ['./result-box.component.scss'],
 })
 export class ResultBoxComponent {
+  @Select(AppState.result) result$: Observable<Result>;
+
   constructor(private toastrService: NbToastrService) {}
 
   copyToClipboard(text: string) {
